@@ -5,7 +5,7 @@
         <van-icon style="font-size: 16px" name="location"/>
         黑龙江
       </div>
-      <div class="header-right">
+      <div class="header-right" @click="searchHandle">
         <van-icon style="margin-right: 10px" size="16" name="search" />搜索会议
       </div>
     </div>
@@ -70,7 +70,7 @@ export default {
   },
   methods: {
     searchHandle() {
-
+      this.$router.push('/search')
     }
   }
 }
