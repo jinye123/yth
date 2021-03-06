@@ -30,10 +30,20 @@ export const router = [
   },
   {
     path: '/meeting',
-    name: 'offlineCourseDetail',
+    name: 'meeting',
     component: () => import('@/views/meeting/index'),
     meta: {
       title: '会议',
+      keepAlive: false,
+      hasTabBar:false
+    }
+  },
+  {
+    path: '/pay',
+    name: 'pay',
+    component: () => import('@/views/pay/index'),
+    meta: {
+      title: '购买',
       keepAlive: false,
       hasTabBar:false
     }

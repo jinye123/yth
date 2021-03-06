@@ -87,6 +87,7 @@
       <van-goods-action-icon icon="wap-home-o" text="首页"/>
       <van-goods-action-icon icon="share-o" text="邀请"/>
       <van-goods-action-button
+        to="/pay"
         type="danger"
         color="#F5CD39"
       >

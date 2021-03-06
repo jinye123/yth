@@ -1,5 +1,5 @@
 <template>
-  <div class="item-box">
+  <div class="item-box" @click="clickHandle">
     <div class="left-box">
       <div>
         <div class="title-box">
@@ -38,7 +38,17 @@
 
 <script>
 export default {
-  name: "item"
+  name: "item",
+  data(){
+    return{
+
+    }
+  },
+  methods:{
+    clickHandle(){
+      this.$router.push('/meeting')
+    }
+  }
 }
 </script>
 
