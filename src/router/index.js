@@ -29,19 +29,9 @@ export const router = [
     }
   },
   {
-    path: '/offlineCourse',
-    name: 'offlineCourse',
-    component: () => import('@/views/offlineCourse/index'),
-    meta: {
-      title: '精华研讨会',
-      keepAlive: false,
-      hasTabBar:false
-    }
-  },
-  {
-    path: '/offlineCourse/detail',
+    path: '/meeting',
     name: 'offlineCourseDetail',
-    component: () => import('@/views/offlineCourse/detail'),
+    component: () => import('@/views/meeting/index'),
     meta: {
       title: '会议',
       keepAlive: false,
