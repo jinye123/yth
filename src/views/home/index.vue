@@ -14,24 +14,27 @@
         title-inactive-color="#696A6B"
         title-active-color="#373839"
         color="#F2D14B"
+        line-height="2px"
+        line-width="22px"
+        style="flex: none"
       >
-        <van-tab title-style="flex:none;width:12%" title="精选">
+        <van-tab title-style="flex:none" title="精选">
           <Jx />
         </van-tab>
-        <van-tab title-style="flex:none;width:12%" title="公开">
+        <van-tab title-style="flex:none" title="公开">
           <Gk />
         </van-tab>
-        <van-tab title-style="flex:none;width:12%" title="精华">
+        <van-tab title-style="flex:none" title="精华">
           <Jh />
         </van-tab>
-        <van-tab title-style="flex:none;width:12%" title="高级">
+        <van-tab title-style="flex:none" title="高级">
           <Gj />
         </van-tab>
-        <van-tab title-style="flex:none;width:12%" title="直播">
+        <van-tab title-style="flex:none" title="直播">
           <liveTv />
         </van-tab>
-        <van-tab title-style="flex:none;width:12%" title="其他">
-          其他
+        <van-tab title-style="flex:none" title="其他">
+          <Qt />
         </van-tab>
       </van-tabs>
     </div>
@@ -45,6 +48,7 @@ import Gk from '../gk'
 import Jh from '../jh'
 import Gj from '../gj'
 import liveTv from '../liveTv'
+import Qt from '../qt'
 
 export default {
   data() {
@@ -57,7 +61,8 @@ export default {
     Gk,
     Jh,
     Gj,
-    liveTv
+    liveTv,
+    Qt
   },
   computed: {},
   created() {

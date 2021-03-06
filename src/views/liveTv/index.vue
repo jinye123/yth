@@ -11,12 +11,12 @@
       >
         <van-tab :name="1" title="直播列表">
           <div class="live-list">
-            <div  class="live-item" v-for="item in list0">
+            <div class="live-item" v-for="item in list0">
               <div class="left-box">
                 <div class="time-box">
-                  {{formatDay(item['startTime'])}}<br/>
-                  {{formatWeek(item['startTime'])}}<br/>
-                  {{formatTime(item['startTime'])}}
+                  {{ formatDay(item['startTime']) }}<br/>
+                  {{ formatWeek(item['startTime']) }}<br/>
+                  {{ formatTime(item['startTime']) }}
                 </div>
                 <div class="line"></div>
               </div>
@@ -30,11 +30,11 @@
                     :src="item['imageUrl']"
                   />
                   <div class="tag-box">
-                    {{setStateHandle(item['startTime'],item['endTime'])}}
+                    {{ setStateHandle(item['startTime'], item['endTime']) }}
                   </div>
                 </div>
                 <div class="title-box">
-                  {{item['name']}}
+                  {{ item['name'] }}
                 </div>
               </div>
             </div>
@@ -54,12 +54,13 @@
                   />
                 </div>
                 <div class="title-box">
-                  {{item['name']}}
+                  {{ item['name'] }}
                 </div>
                 <div class="btn-box">
                   <div class="time-box">
                     <van-icon size="18" name="clock-o"/>
-                    {{formatDay(item['startTime'])}} {{formatWeek(item['startTime'])}} {{formatTime(item['startTime'])}}
+                    {{ formatDay(item['startTime']) }} {{ formatWeek(item['startTime']) }}
+                    {{ formatTime(item['startTime']) }}
                   </div>
                   <van-button
                     style="width: 84px;height: 32px"
@@ -80,6 +81,7 @@
 
 <script>
 import dayjs from 'dayjs';
+
 export default {
   name: "index",
   data() {
@@ -259,31 +261,29 @@ export default {
           "liveUrl": ""
         }
       ],
-      weeks:["周日", "周一", "周二", "周三", "周四", "周五", "周六"],
+      weeks: ["周日", "周一", "周二", "周三", "周四", "周五", "周六"],
     }
   },
-  computed: {
-
-  },
+  computed: {},
   created() {
 
   },
   methods: {
-    formatDay(time){
+    formatDay(time) {
       return dayjs(time).format(`MM月DD日`)
     },
-    formatWeek(time){
+    formatWeek(time) {
       return this.weeks[dayjs(time).day()]
     },
-    formatTime(time){
+    formatTime(time) {
       return dayjs(time).format(`HH:mm`)
     },
-    setStateHandle (startTime,endTime) {
-      if(dayjs(startTime) - dayjs() > 0){
+    setStateHandle(startTime, endTime) {
+      if (dayjs(startTime) - dayjs() > 0) {
         return '未开始'
-      }else if(dayjs(endTime) - dayjs() < 0){
+      } else if (dayjs(endTime) - dayjs() < 0) {
         return '已结束'
-      }else {
+      } else {
         return '直播中'
       }
     },
