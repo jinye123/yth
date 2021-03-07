@@ -1,13 +1,21 @@
 <template>
   <div class="page-box container-box">
     <div class="header-container">
-      <div class="header-left">
+      <div class="header-left" @click="selectAddressHandle">
         <van-icon style="font-size: 16px" name="location"/>
         黑龙江
       </div>
       <div class="header-right" @click="searchHandle">
-        <van-icon style="margin-right: 10px" size="16" name="search" />搜索会议
+        <van-icon style="margin-right: 10px" size="16" name="search"/>
+        搜索会议
       </div>
+      <transition name="van-fade">
+        <div class="address-list" v-show="showAddress">
+          <div class="address-item" v-for="i in 30">
+            全国
+          </div>
+        </div>
+      </transition>
     </div>
     <div class="body-container">
       <van-tabs
@@ -19,26 +27,25 @@
         style="flex: none"
       >
         <van-tab title-style="flex:none" title="精选">
-          <Jx />
+          <Jx/>
         </van-tab>
         <van-tab title-style="flex:none" title="公开">
-          <Gk />
+          <Gk/>
         </van-tab>
         <van-tab title-style="flex:none" title="精华">
-          <Jh />
+          <Jh/>
         </van-tab>
         <van-tab title-style="flex:none" title="高级">
-          <Gj />
+          <Gj/>
         </van-tab>
         <van-tab title-style="flex:none" title="直播">
-          <liveTv />
+          <liveTv/>
         </van-tab>
         <van-tab title-style="flex:none" title="其他">
-          <Qt />
+          <Qt/>
         </van-tab>
       </van-tabs>
     </div>
-
   </div>
 </template>
 
@@ -54,6 +61,7 @@ export default {
   data() {
     return {
       searchValue: '',
+      showAddress: false,
     }
   },
   components: {
@@ -71,6 +79,9 @@ export default {
   methods: {
     searchHandle() {
       this.$router.push('/search')
+    },
+    selectAddressHandle() {
+      this.showAddress = !this.showAddress
     }
   }
 }
@@ -83,6 +94,7 @@ export default {
   box-sizing: border-box;
   padding: 8px 15px;
   background: #ffffff;
+  position: relative;
 
   .header-left {
     font-size: 13px;
@@ -105,8 +117,33 @@ export default {
     align-items: center;
     justify-content: center;
   }
+
+  .address-list {
+    position: absolute;
+    width: 100%;
+    left: 0;
+    top: 50px;
+    z-index: 100;
+    background: #ffffff;
+    box-sizing: border-box;
+    padding: 10px 0;
+    box-shadow: 0px 3px 4px 2px rgba(218, 218, 218, 0.15);
+    border-radius: 0px 0px 5px 5px;
+
+    .address-item {
+      display: inline-block;
+      background: #F2F3F4;
+      border-radius: 5px;
+      padding: 8px 15px;
+      color: #333333;
+      font-size: 12px;
+      margin-bottom: 12px;
+      margin-left: 15px;
+    }
+  }
 }
-.body-container{
+
+.body-container {
   width: 100%;
   flex: 1;
   background: #ffffff;
