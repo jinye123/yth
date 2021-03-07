@@ -1,6 +1,5 @@
 import Vue from 'vue'
 import Router from 'vue-router'
-import PaySuccessPage from '../views/paySuccess'
 Vue.use(Router)
 export const router = [
   {
@@ -55,7 +54,7 @@ export const router = [
     meta: {
       title: '消息列表',
       keepAlive: false,
-      hasTabBar:false,
+      hasTabBar:true,
     }
   },
   {
@@ -69,11 +68,81 @@ export const router = [
     }
   },
   {
+    path: '/my/ticket',
+    name: 'ticket',
+    component: () => import('@/views/my/ticket'),
+    meta: {
+      title: '我的门票',
+      keepAlive: false,
+      hasTabBar:false,
+    }
+  },
+  {
+    path: '/my/history',
+    name: 'history',
+    component: () => import('@/views/my/classHistory'),
+    meta: {
+      title: '上课记录',
+      keepAlive: false,
+      hasTabBar:false,
+    }
+  },
+  {
+    path: '/my/payHistory',
+    name: 'history',
+    component: () => import('@/views/my/payHistory'),
+    meta: {
+      title: '缴费记录',
+      keepAlive: false,
+      hasTabBar:false,
+    }
+  },
+  {
+    path: '/my/invite',
+    name: 'invite',
+    component: () => import('@/views/my/invite'),
+    meta: {
+      title: '邀请关系',
+      keepAlive: false,
+      hasTabBar:false,
+    }
+  },
+  {
+    path: '/my/billApply',
+    name: 'billApply',
+    component: () => import('@/views/my/billApply'),
+    meta: {
+      title: '电子申请',
+      keepAlive: false,
+      hasTabBar:false,
+    }
+  },
+  {
+    path: '/my/billApplyDz',
+    name: 'billApplyDz',
+    component: () => import('@/views/my/billApplyDz'),
+    meta: {
+      title: '发票申请',
+      keepAlive: false,
+      hasTabBar:false,
+    }
+  },
+  {
     path: '/edit',
     name: 'edit',
     component: () => import('@/views/my/edit'),
     meta: {
       title: '修改信息',
+      keepAlive: false,
+      hasTabBar:false,
+    }
+  },
+  {
+    path: '/authenticate',
+    name: 'authenticate',
+    component: () => import('@/views/authenticate/index'),
+    meta: {
+      title: '实名认证',
       keepAlive: false,
       hasTabBar:false,
     }

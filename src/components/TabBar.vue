@@ -4,7 +4,7 @@
       <van-tabbar-item to="/home" icon-prefix="icon" icon="icon icon-shouye">
         首页
       </van-tabbar-item>
-      <van-tabbar-item to="/card/cardList" icon="card" >
+      <van-tabbar-item to="/message" icon="card" >
         消息
       </van-tabbar-item>
       <van-tabbar-item to="/my" icon-prefix="icon" icon="icon icon-wode">

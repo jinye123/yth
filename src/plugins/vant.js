@@ -40,7 +40,9 @@ import {
   Search,
   Sticky,
   Sidebar,
-  SidebarItem
+  SidebarItem,
+  Collapse,
+  CollapseItem
 } from 'vant';
 
 Vue.use(Button);
@@ -84,3 +86,5 @@ Vue.use(Search);
 Vue.use(Sticky);
 Vue.use(Sidebar);
 Vue.use(SidebarItem);
+Vue.use(Collapse);
+Vue.use(CollapseItem);

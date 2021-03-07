@@ -18,6 +18,8 @@
   display:flex;
   flex: 1;
   flex-direction: column;
+  overflow-y:auto;
+  -webkit-overflow-scrolling: touch;
 }
 
 .line-tip-box{

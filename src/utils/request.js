@@ -1,6 +1,5 @@
 import axios from 'axios'
 import store from '@/store'
-import {EncryptDta,DecryptData} from './toggleCrypto'
 import {
   Toast
 } from 'vant'
