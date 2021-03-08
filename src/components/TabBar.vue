@@ -1,14 +1,26 @@
 <template>
   <div>
-    <van-tabbar inactive-color="#999999" active-color="#D64848" fixed route>
-      <van-tabbar-item to="/home" icon-prefix="icon" icon="icon icon-shouye">
-        首页
+    <van-tabbar inactive-color="#999999" active-color="#232324" fixed route>
+      <van-tabbar-item to="/home">
+        <span>首页</span>
+        <template #icon="props">
+          <img v-if="props.active" src="../assets/img/home1.png" />
+          <img v-else src="../assets/img/home.png" />
+        </template>
       </van-tabbar-item>
-      <van-tabbar-item to="/message" icon="card" >
-        消息
+      <van-tabbar-item to="/message" >
+        <span>消息</span>
+        <template #icon="props">
+          <img v-if="props.active" src="../assets/img/message1.png" />
+          <img v-else src="../assets/img/message.png" />
+        </template>
       </van-tabbar-item>
-      <van-tabbar-item to="/my" icon-prefix="icon" icon="icon icon-wode">
-        我的
+      <van-tabbar-item to="/my">
+        <span>我的</span>
+        <template #icon="props">
+          <img v-if="props.active" src="../assets/img/my1.png" />
+          <img v-else src="../assets/img/my.png" />
+        </template>
       </van-tabbar-item>
     </van-tabbar>
   </div>
@@ -20,7 +32,10 @@
     name: 'TabBar',
     data() {
       return {
-        active: 0
+        active: 0,
+        icon:{
+
+        }
       }
     },
     methods: {}
@@ -45,5 +60,8 @@
 
   a {
     color: #42b983;
+  }
+  img{
+    height: 100%;
   }
 </style>
