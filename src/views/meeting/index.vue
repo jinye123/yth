@@ -48,11 +48,7 @@
         </div>
         <div class="person-box" v-for="item in dataInfo['tutors']">
           <div class="person-avatar-box">
-            <van-image
-              round
-              width="118px"
-              height="118px"
-              :src="item['header']"/>
+            <img :src="item['header']" alt="">
             <div class="name-box">{{ item['name'] }}</div>
           </div>
           <div class="text-box">
@@ -85,7 +81,11 @@
     </div>
     <van-goods-action>
       <van-goods-action-icon icon="wap-home-o" text="首页"/>
-      <van-goods-action-icon icon="share-o" text="邀请"/>
+      <van-goods-action-icon text="邀请">
+        <template #icon>
+          <span style="font-size: 13px;" class="icon icon-fenxiang"></span>
+        </template>
+      </van-goods-action-icon>
       <van-goods-action-button
         to="/pay"
         type="danger"
@@ -324,6 +324,12 @@ export default {
         margin-left: -60px;
         display: flex;
         justify-content: center;
+
+        img{
+          width: 118px;
+          height: 118px;
+          border-radius: 50%;
+        }
 
         .name-box {
           padding: 0 20px;

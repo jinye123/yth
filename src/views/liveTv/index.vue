@@ -2,14 +2,19 @@
   <div class="page-box">
     <div class="live-tv-container">
       <van-tabs
-        v-model="activeId"
-        color="#EDB46F"
-        line-height="2px"
+        :swipe-threshold="1"
+        title-inactive-color="#696A6B"
+        title-active-color="#373839"
+        color="#F2D14B"
+        background="#FAFAFC"
+        line-height="0"
         line-width="22px"
-        sticky
-        swipeable
+        style="flex: none"
       >
-        <van-tab :name="1" title="直播列表">
+        <van-tab title-style="flex:none" :name="1" title="直播列表">
+          <template #title>
+            <div class="custom-tab">直播列表</div>
+          </template>
           <div class="live-list">
             <div class="live-item" v-for="item in list0">
               <div class="left-box">
@@ -40,7 +45,10 @@
             </div>
           </div>
         </van-tab>
-        <van-tab :name="2" title="往期直播">
+        <van-tab title-style="flex:none" :name="2" title="往期直播">
+          <template #title>
+            <div class="custom-tab">往期直播</div>
+          </template>
           <div class="live-list">
             <div class="live-item" v-for="item in list1">
               <div class="right-box right-box2">
@@ -66,8 +74,8 @@
                     style="width: 84px;height: 32px"
                     round
                     size="small"
-                    color="linear-gradient(to right, #F7C239, #F6A533)">
-                    查看回放
+                    color="linear-gradient(to right, #FFF9E9, #FED28C)">
+                    <span style="color: #6E4711">查看回放</span>
                   </van-button>
                 </div>
               </div>
@@ -393,5 +401,22 @@ export default {
 
   }
 }
-
+.custom-tab{
+  width: 80px;
+  height: 28px;
+  background: #EEEDED;
+  border-radius: 14px;
+  font-size: 14px;
+  font-weight: 400;
+  color: #8D939D;
+  text-align: center;
+  line-height: 28px;
+  flex: none;
+}
+.van-tab--active{
+  .custom-tab{
+    color: #FFFFFF;
+    background: #2C80FF;
+  }
+}
 </style>

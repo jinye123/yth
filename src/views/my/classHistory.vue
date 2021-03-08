@@ -6,7 +6,7 @@
         title-inactive-color="#696A6B"
         title-active-color="#373839"
         color="#F2D14B"
-        line-height="2px"
+        line-height="3px"
         line-width="22px"
       >
         <van-tab title-style="flex:none" title="公开">
@@ -23,10 +23,6 @@
                 <div style="width: 100%;background:  #F5F6F7">
                   <Item v-for="i in 2"/>
                 </div>
-
-                <!--                <template #right-icon>-->
-                <!--                  <van-icon name="arrow" />-->
-                <!--                </template>-->
               </van-collapse-item>
               <van-collapse-item is-link="false" title="已过期" name="2">
                 <Item v-for="i in 2"/>
@@ -102,13 +98,6 @@ export default {
     width: 100%;
     padding: 15px 0;
     box-sizing: border-box;
-  }
-
-  /deep/ .van-collapse-item__content {
-    background: #F5F6F7 !important;
-  }
-  /deep/ .van-cell{
-    background: #F5F6F7 !important;
   }
 }
 </style>

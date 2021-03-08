@@ -6,7 +6,7 @@
         title-inactive-color="#696A6B"
         title-active-color="#373839"
         color="#F2D14B"
-        line-height="2px"
+        line-height="3px"
         line-width="22px"
       >
         <van-tab title-style="flex:none" title="已缴费">

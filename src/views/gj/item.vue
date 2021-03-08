@@ -23,6 +23,7 @@
         <van-button
           style="width:84px;height: 32px"
           round
+          size="small"
           color="#F5CD39"
           type="info">
           <span style="font-size: 13px;color: #130F00;font-weight: bold">立即报名</span>

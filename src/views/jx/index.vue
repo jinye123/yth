@@ -41,6 +41,7 @@
             <van-button
               style="width:84px;height: 32px"
               round
+              size="small"
               color="#F5CD39"
               type="info">
               <span style="font-size: 13px;color: #130F00;font-weight: bold">立即报名</span>
@@ -102,7 +103,7 @@ export default {
   box-sizing: border-box;
 
   .category-item {
-    width: 170px;
+    width: 165px;
     height: 62px;
     background: #FFFFFF;
     box-shadow: 0px 2px 4px 1px rgba(218, 218, 218, 0.15);
